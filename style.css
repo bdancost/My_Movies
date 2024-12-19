@@ -1,6 +1,6 @@
 :root {
   --primary-color: #29335c;
-  --light-primary: #9ac4f8;
+  --light-primary: #3f4f8d;
   --lightest-color: #e9ebd5;
   --secondary-color: #774936;
   --light-secondary: #c08972;
@@ -35,10 +35,14 @@ header > h2 > i {
 
 .movie-name-wrapper {
   width: 65%;
+  display: flex;
+  align-items: center;
 }
 
 .movie-year-wrapper {
   width: 30%;
+  display: flex;
+  align-items: center;
 }
 
 #search-button {
@@ -47,4 +51,40 @@ header > h2 > i {
 
 .movie-year-wrapper > input {
   max-width: 5rem;
+}
+
+.movie-name-wrapper > input {
+  width: 100%;
+}
+
+.movie-name-wrapper > input,
+.movie-year-wrapper > input {
+  margin: 0 0.5rem;
+  border-radius: 7px;
+  background-color: var(--lightest-color);
+  border: 0;
+  font-weight: bold;
+  font-size: inherit;
+  outline: 0;
+  padding: 0.3rem 0.2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.movie-name-wrapper > label,
+.movie-year-wrapper > label {
+  font-weight: bold;
+}
+
+#search-button {
+  all: unset;
+  padding: 0.3rem;
+  border: 2px solid var(--lightest-color);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+#search-button:focus,
+#search-button:hover {
+  background-color: var(--light-primary);
 }
