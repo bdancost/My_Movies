@@ -1,0 +1,40 @@
+{
+  "Title": "Titanic Town",
+  "Year": "1998",
+  "Rated": "N/A",
+  "Released": "26 Feb 1999",
+  "Runtime": "100 min",
+  "Genre": "Drama",
+  "Director": "Roger Michell",
+  "Writer": "Mary Costello, Anne Devlin",
+  "Actors": "Julie Walters, Ciarán Hinds, Nuala O'Neill",
+  "Plot": "A Belfast, Northern Ireland housewife takes up the peace cause, which causes her family trouble with I.R.A. sympathizers.",
+  "Language": "English",
+  "Country": "United Kingdom",
+  "Awards": "4 wins & 5 nominations",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BYjU4ZDg3YmQtODk2Ni00ZDU3LTg4YTQtODQ0MmE3ZDlmNmQ5XkEyXkFqcGc@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "6.4/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "84%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "73/100"
+    }
+  ],
+  "Metascore": "73",
+  "imdbRating": "6.4",
+  "imdbVotes": "463",
+  "imdbID": "tt0127319",
+  "Type": "movie",
+  "DVD": "N/A",
+  "BoxOffice": "$65,793",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}
