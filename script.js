@@ -4,29 +4,36 @@ const movieName = document.getElementById("movie-name");
 const movieYear = document.getElementById("movie-year");
 
 async function searchButtonClickHandler() {
-  const formattedMovieName = encodeURIComponent(movieName.value.trim());
-  const year = movieYear.value.trim();
-  let url = `https://www.omdbapi.com/?apikey=${key}&t=${formattedMovieName}&y=${year}`;
-
   try {
+    let url = `https://www.omdbapi.com/?apikey=${key}&t=${formattedMovieName()}${formattedMovieYear()}`;
+
     const response = await fetch(url);
     const data = await response.json();
-
-    if (data.Response === "False") {
-      console.error("Erro: ", data.Error);
-      alert(`Erro: ${data.Error}`);
-      return;
+    console.log("data: ", data);
+    if (data.Error) {
+      throw new Error("Movie not found");
     }
-
-    console.log("Dados recebidos: ", data);
     overlay.classList.add("open");
-
-    document.getElementById("movie-title").textContent =
-      data.Title || "Título não encontrado";
   } catch (error) {
-    console.error("Erro ao fazer a requisição: ", error);
-    alert("Erro na comunicação com o servidor. Tente novamente.");
+    notie.alert({ type: "error", text: error.message });
   }
+}
+
+function formattedMovieName() {
+  if (movieName.value === "") {
+    throw new Error("Please enter a movie name");
+  }
+  return movieName.value.split(" ").join("+").trim();
+}
+
+function formattedMovieYear() {
+  if (movieYear.value === "") {
+    return "";
+  }
+  if (movieYear.value.length !== 4 || Number.isNaN(Number(movieYear.value))) {
+    throw new Error("Please enter a valid year");
+  }
+  return `&y=${movieYear.value.trim()}`;
 }
 
 searchButton.addEventListener("click", searchButtonClickHandler);
