@@ -13,6 +13,7 @@ async function searchButtonClickHandler() {
     if (data.Error) {
       throw new Error("Movie not found");
     }
+    createModal(data);
     overlay.classList.add("open");
   } catch (error) {
     notie.alert({ type: "error", text: error.message });
@@ -35,5 +36,11 @@ function formattedMovieYear() {
   }
   return `&y=${movieYear.value.trim()}`;
 }
+
+addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchButtonClickHandler();
+  }
+});
 
 searchButton.addEventListener("click", searchButtonClickHandler);
