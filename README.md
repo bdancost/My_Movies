@@ -83,9 +83,6 @@ const API_KEY = "YOUR_API_KEY";
 - **Busca Avançada** com mais filtros, como classificação por gênero ou notas.
 - **Tema Escuro** para melhorar a experiência do usuário.
 
-## 🖥️ Pré-visualização
-
-Hospede a aplicação localmente ou use um serviço como [GitHub Pages](https://pages.github.com/) para disponibilizar a aplicação na web.
 
 ## 🤝 Contribuição
 
