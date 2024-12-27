@@ -139,3 +139,43 @@ main {
   background-color: var(--light-secondary);
   color: var(--lightest-color);
 }
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  #search-container {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+
+  .movie-name-wrapper,
+  .movie-year-wrapper {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .movie-name-wrapper > input,
+  .movie-year-wrapper > input {
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  #search-button {
+    width: auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  header > h2 > i {
+    margin-right: 0;
+  }
+}
