@@ -9,14 +9,15 @@ let movieList = JSON.parse(localStorage.getItem("movieList")) ?? [];
 
 async function searchButtonClickHandler() {
   try {
-    let url = `https://www.omdbapi.com/?apikey=${key}&t=${formattedMovieName()}${formattedMovieYear()}`;
+    let url = `/api/fetchMovie?movie=${formattedMovieName()}&year=${formattedMovieYear()}`;
 
     const response = await fetch(url);
     const data = await response.json();
-    console.log("data: ", data);
-    if (data.Error) {
+
+    if (data.error) {
       throw new Error("Movie not found");
     }
+
     createModal(data);
     overlay.classList.add("open");
   } catch (error) {
