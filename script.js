@@ -9,13 +9,14 @@ let movieList = JSON.parse(localStorage.getItem("movieList")) ?? [];
 
 async function searchButtonClickHandler() {
   try {
-    let url = `/api/fetchMovie?movie=${formattedMovieName()}&year=${formattedMovieYear()}`;
+    const movie = formattedMovieName();
+    const year = formattedMovieYear();
+    const url = `/api/fetchMovie?movie=${movie}${year ? `&year=${year}` : ""}`;
 
     const response = await fetch(url);
     const data = await response.json();
-
     if (data.error) {
-      throw new Error("Movie not found");
+      throw new Error(data.error);
     }
 
     createModal(data);
