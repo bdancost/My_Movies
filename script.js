@@ -39,7 +39,7 @@ function formattedMovieYear() {
   if (movieYear.value.length !== 4 || Number.isNaN(Number(movieYear.value))) {
     throw new Error("Please enter a valid year");
   }
-  return `&y=${movieYear.value.trim()}`;
+  return movieYear.value.trim();
 }
 
 addEventListener("keydown", (event) => {
